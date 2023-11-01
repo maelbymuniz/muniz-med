@@ -1,5 +1,6 @@
 package muniz.med.api.controller;
 
+import jakarta.validation.Valid;
 import muniz.med.api.address.Address;
 import muniz.med.api.doctor.DataDoctorRegister;
 import muniz.med.api.doctor.Doctor;
@@ -20,7 +21,7 @@ public class DoctorController {
 
     @PostMapping
     @Transactional
-    public void register(@RequestBody DataDoctorRegister dataDoctorRegister) {
+    public void register(@RequestBody @Valid DataDoctorRegister dataDoctorRegister) {
         repository.save(new Doctor(dataDoctorRegister));
     }
 }
