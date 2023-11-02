@@ -2,15 +2,15 @@ package muniz.med.api.controller;
 
 import jakarta.validation.Valid;
 import muniz.med.api.address.Address;
-import muniz.med.api.doctor.DataDoctorRegister;
-import muniz.med.api.doctor.Doctor;
-import muniz.med.api.doctor.DoctorRepository;
+import muniz.med.api.doctor.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("doctors")
@@ -24,4 +24,17 @@ public class DoctorController {
     public void register(@RequestBody @Valid DataDoctorRegister dataDoctorRegister) {
         repository.save(new Doctor(dataDoctorRegister));
     }
+
+    @GetMapping
+    public Page<DataDoctorList> listDoctors(@PageableDefault(size=10, sort = {"name"}) Pageable pagination) {
+        return repository.findAll(pagination).map(DataDoctorList::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void updateInformation(@RequestBody @Valid DataDoctorUpdate dataDoctorUpdate) {
+        var doctor = repository.getReferenceById(dataDoctorUpdate.id());
+        doctor.dataUpdate(dataDoctorUpdate);
+    }
+
 }

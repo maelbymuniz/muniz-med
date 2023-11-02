@@ -1,4 +1,4 @@
-package muniz.med.api.doctor;
+/*package muniz.med.api.doctor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,4 +19,4 @@ public class DoctorService {
         Optional<Doctor> obj = repository.findById(id);
         return obj.get();
     }
-}
+}*/

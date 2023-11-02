@@ -28,4 +28,28 @@ public class Address {
         this.state = homeAddress.state();
         this.complement = homeAddress.complement();
     }
+
+    public void updateAdress(HomeAddress homeAddress) {
+        if (homeAddress.street() != null) {
+            this.street = homeAddress.street();
+        }
+        if(homeAddress.number() != null) {
+            this.number = homeAddress.number();
+        }
+        if (homeAddress.neighborhood() != null) {
+            this.neighborhood = homeAddress.neighborhood();
+        }
+        if (homeAddress.zipCode() != null) {
+            this.zipCode = homeAddress.zipCode();
+        }
+        if (homeAddress.city() != null) {
+            this.city = homeAddress.city();
+        }
+        if (homeAddress.state() != null) {
+            this.state = homeAddress.state();
+        }
+        if (homeAddress.complement() != null) {
+            this.complement = homeAddress.complement();
+        }
+    }
 }
