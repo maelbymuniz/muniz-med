@@ -1,4 +1,4 @@
-package muniz.med.api.address;
+package muniz.med.api.domain.address;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

@@ -1,11 +1,11 @@
-package muniz.med.api.doctor;
+package muniz.med.api.domain.doctor;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import muniz.med.api.address.Address;
+import muniz.med.api.domain.address.Address;
 
 @Entity(name = "Doctor")
 @Table(name = "tb_doctors")

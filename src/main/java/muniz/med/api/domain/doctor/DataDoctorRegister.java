@@ -1,11 +1,11 @@
-package muniz.med.api.doctor;
+package muniz.med.api.domain.doctor;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import muniz.med.api.address.HomeAddress;
+import muniz.med.api.domain.address.HomeAddress;
 
 public record DataDoctorRegister(
         @NotBlank

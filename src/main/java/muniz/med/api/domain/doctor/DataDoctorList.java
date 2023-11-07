@@ -1,4 +1,4 @@
-package muniz.med.api.doctor;
+package muniz.med.api.domain.doctor;
 
 public record DataDoctorList(Long id, String name, String email, String crm, MedicalSpecialty medicalSpecialty) {
 

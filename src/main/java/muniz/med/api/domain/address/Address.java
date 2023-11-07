@@ -1,4 +1,4 @@
-package muniz.med.api.address;
+package muniz.med.api.domain.address;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
