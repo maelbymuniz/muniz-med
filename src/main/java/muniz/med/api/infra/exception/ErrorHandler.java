@@ -1,4 +1,4 @@
-package muniz.med.api.infra;
+package muniz.med.api.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
